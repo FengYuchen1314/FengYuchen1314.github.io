@@ -41,7 +41,7 @@ jobs:
       run: |
         echo "Installing dependencies in $(pwd)"
         npm config set registry https://registry.npmjs.org/
-        npm install --legacy-peer-deps --verbose --loglevel=verbose
+        npm install --legacy-peer-deps --force --verbose --loglevel=verbose
         echo "npm install exit code: $?"
     
     - name: Fetch GitHub trending repositories and generate AI-enhanced posts

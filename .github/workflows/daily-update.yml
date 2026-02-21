@@ -20,12 +20,25 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20'
+        node-version: '18'  # 降级到Node.js 18以提高兼容性
+    
+    - name: Debug - Show directory structure
+      run: |
+        echo "Current directory: $(pwd)"
+        echo "Directory contents:"
+        ls -la
+        echo "blog directory contents:"
+        ls -la blog/
+        echo "blog/package.json contents:"
+        cat blog/package.json || echo "No package.json found"
     
     - name: Install dependencies
       run: |
         cd blog
-        npm install
+        echo "Installing dependencies in $(pwd)"
+        npm config set registry https://registry.npmjs.org/
+        npm install --verbose --loglevel=verbose
+        echo "npm install exit code: $?"
     
     - name: Fetch GitHub trending repositories and generate AI-enhanced posts
       run: |
@@ -50,6 +63,8 @@ jobs:
       run: |
         git config --global user.name "GitHub Actions Bot"
         git config --global user.email "actions@github.com"
+        # 设置远程URL使用GITHUB_TOKEN进行认证
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
     
     - name: Commit generated posts
       run: |
@@ -59,7 +74,7 @@ jobs:
           echo "No changes to commit"
         else
           git commit -m "chore: auto-update AI-enhanced GitHub trending posts for $(date +'%Y-%m-%d')"
-          git push
+          git push origin main
         fi
     
     - name: Generate static site

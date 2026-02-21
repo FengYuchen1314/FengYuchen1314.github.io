@@ -25,7 +25,7 @@ jobs:
     - name: Install dependencies
       run: |
         cd blog
-        npm ci
+        npm install
     
     - name: Fetch GitHub trending repositories and generate AI-enhanced posts
       run: |

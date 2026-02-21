@@ -1,0 +1,78 @@
+name: Daily GitHub Trending Update
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 每天UTC时间00:00（北京时间08:00）
+  workflow_dispatch:  # 允许手动触发
+  push:
+    branches: [ main, master ]
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        cache-dependency-path: 'blog/package-lock.json'
+    
+    - name: Install dependencies
+      run: |
+        cd blog
+        npm ci
+    
+    - name: Fetch GitHub trending repositories and generate AI-enhanced posts
+      run: |
+        cd blog
+        node scripts/fetch-github-trending.js
+      env:
+        # DeepSeek API密钥，需要在GitHub仓库Secrets中设置DEEPSEEK_API_KEY
+        DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        # 可选：如果需要更高的API限制，可以设置GitHub Token
+        # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Verify generated posts
+      run: |
+        cd blog
+        echo "Generated posts:"
+        ls -la source/_posts/
+        echo "---"
+        echo "Latest post preview (first 50 lines):"
+        head -50 source/_posts/$(ls -t source/_posts/ | head -1)
+    
+    - name: Configure Git
+      run: |
+        git config --global user.name "GitHub Actions Bot"
+        git config --global user.email "actions@github.com"
+    
+    - name: Commit generated posts
+      run: |
+        cd blog
+        git add source/_posts/
+        if git diff --cached --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "chore: auto-update AI-enhanced GitHub trending posts for $(date +'%Y-%m-%d')"
+          git push
+        fi
+    
+    - name: Generate static site
+      run: |
+        cd blog
+        npm run build
+    
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./blog/public
+        publish_branch: gh-pages
+        force_orphan: true  # 保持gh-pages分支干净

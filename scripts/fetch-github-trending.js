@@ -6,13 +6,19 @@ async function fetchTrendingRepositories() {
     const url = 'https://api.github.com/search/repositories?q=created:>=' + getDateYesterday() + '&sort=stars&order=desc&per_page=10';
     console.log('Fetching trending repositories from:', url);
     
+    const headers = {
+        'Accept': 'application/vnd.github.v3+json',
+        'User-Agent': 'Hexo-GitHub-Trending-Bot'
+    };
+    
+    // 如果存在GitHub Token，添加到请求头以提高速率限制
+    if (process.env.GITHUB_TOKEN) {
+        headers['Authorization'] = `token ${process.env.GITHUB_TOKEN}`;
+        console.log('Using GitHub Token for API request');
+    }
+    
     try {
-        const response = await fetch(url, {
-            headers: {
-                'Accept': 'application/vnd.github.v3+json',
-                'User-Agent': 'Hexo-GitHub-Trending-Bot'
-            }
-        });
+        const response = await fetch(url, { headers });
         
         if (!response.ok) {
             throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);

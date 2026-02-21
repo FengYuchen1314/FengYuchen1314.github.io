@@ -1,6 +1,6 @@
 const https = require('https');
 
-const DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY || 'sk-8f0bb8d1265b4c50911bb3d095b697d8';
+const DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY;
 const DEEPSEEK_API_URL = 'https://api.deepseek.com/v1/chat/completions';
 const DEEPSEEK_MODEL = 'deepseek-chat';  // 非思考模型，根据用户要求
 
@@ -15,6 +15,12 @@ async function generateProjectIntroduction(repo) {
         updated_at,
         created_at
     } = repo;
+
+    // 如果没有DeepSeek API密钥，直接返回备用介绍
+    if (!DEEPSEEK_API_KEY) {
+        console.log('DeepSeek API密钥未设置，使用备用介绍');
+        return generateFallbackIntroduction(repo);
+    }
 
     const prompt = `你是一个技术博客作者，需要为GitHub上的开源项目撰写详细的项目介绍。请基于以下项目信息，生成一篇详细、专业、有吸引力的中文项目介绍：
 

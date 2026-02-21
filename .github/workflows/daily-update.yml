@@ -25,7 +25,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '18'  # 降级到Node.js 18以提高兼容性
+        node-version: '16'  # 降级到Node.js 16以提高兼容性，避免ESM模块问题
     
     - name: Debug - Show directory structure
       run: |
@@ -41,7 +41,7 @@ jobs:
       run: |
         echo "Installing dependencies in $(pwd)"
         npm config set registry https://registry.npmjs.org/
-        npm install --verbose --loglevel=verbose
+        npm install --legacy-peer-deps --verbose --loglevel=verbose
         echo "npm install exit code: $?"
     
     - name: Fetch GitHub trending repositories and generate AI-enhanced posts

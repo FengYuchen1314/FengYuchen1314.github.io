@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 8.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://hexoblog.cn-nb1.rains3.com/228097635.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://hexoblog.cn-nb1.rains3.com/228097635.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://hexoblog.cn-nb1.rains3.com/228097635.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.chrono-well.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":false,"nav":null,"activeClass":"utterances"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="用完市面上大部分的ai之后，这是我的看法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谈谈目前的ai大模型">
+<meta property="og:url" content="https://www.chrono-well.top/2026/05/02/1/index.html">
+<meta property="og:site_name" content="Yuchen的博客">
+<meta property="og:description" content="用完市面上大部分的ai之后，这是我的看法">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://picgo.cn-nb1.rains3.com/2026/05/44a93cd3f142927342ea4007358b23eb.jpeg">
+<meta property="og:image" content="https://picgo.cn-nb1.rains3.com/2026/05/7b4fe190097526234f721b53fe668e82.png">
+<meta property="og:image" content="https://picgo.cn-nb1.rains3.com/2026/05/a83c69ca992fae46308f331db7bad46a.png">
+<meta property="og:image" content="https://picgo.cn-nb1.rains3.com/2026/05/b5e4320df71d94b0cd0f5949b4d2e128.png">
+<meta property="og:image" content="https://picgo.cn-nb1.rains3.com/2026/05/082e6e9d7a9b4f0fd5fb7f124564649c.png">
+<meta property="article:published_time" content="2026-05-02T04:37:50.041Z">
+<meta property="article:modified_time" content="2026-05-02T05:29:07.411Z">
+<meta property="article:author" content="Yuchen">
+<meta property="article:tag" content="ai">
+<meta property="article:tag" content="llm">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picgo.cn-nb1.rains3.com/2026/05/44a93cd3f142927342ea4007358b23eb.jpeg">
+
+<link rel="canonical" href="https://www.chrono-well.top/2026/05/02/1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>谈谈目前的ai大模型 | Yuchen的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Yuchen的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">诚谬会以取拙，且欣然而归止</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="text" inputmode="search" role="searchbox" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  
+  <div id="no-result"></div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chrono-well.top/2026/05/02/1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hexoblog.cn-nb1.rains3.com/228097635.png">
+      <meta itemprop="name" content="Yuchen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuchen的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          谈谈目前的ai大模型
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2026-05-02 12:37:50 / 修改时间：13:29:07" itemprop="dateCreated datePublished" datetime="2026-05-02T12:37:50+08:00">2026-05-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ai/" itemprop="url" rel="index"><span itemprop="name">ai</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="deepseek-v4-发布"><a class="markdownIt-Anchor" href="#deepseek-v4-发布"></a> DeepSeek V4 发布</h2>
+<p>这两天 DeepSeek V4 发布了，引起了全世界的关注。Pro 版本百万 tokens 输入/输出价格为 12/24 元，flash 版本为 2/3元。说实在的，Pro版本差点意思，没有全模态，但是价格居然和kimi处于同一档位。虽然后期等华为的算力卡部署之后会下调价格，但这已经是后话了。</p>
+<p><img src="https://picgo.cn-nb1.rains3.com/2026/05/44a93cd3f142927342ea4007358b23eb.jpeg" alt="img" /></p>
+<p>从参数上看，纯文本 1.6T 参数量，在开源模型里面排第一，实际使用起来也还可以。但就像之前所说的，没有多模态，用起来很不舒服。</p>
+<p>其次就是输出速度的问题。Pro 输出速度和上一代基本一致，30 tps，已经低于主流的速度了，但好在首字时延依旧是全球最低。flash 版本在80 tps左右，也是不敌其他主流的 flash 模型速度，qwen、grok 都可以到200左右（grok甚至满血版模型都有150+ tps，非常惊人）。</p>
+<p>目前来看，DeepSeek 最大的优势在于价格。市面上同等智力的模型，都做不到 3元/百万tokens 输出这种几乎赔本的水平。而且 flash 模型本身并不差，用来搞多 agent，接入 openclaw 肯定是绰绰有余；搭配 dify 平台构建工作流也不用担心账单爆炸，可以放心处理大量的文本。</p>
+<h2 id="kimi-k26-及其订阅计划"><a class="markdownIt-Anchor" href="#kimi-k26-及其订阅计划"></a> Kimi K2.6 及其订阅计划</h2>
+<h3 id="使用体验"><a class="markdownIt-Anchor" href="#使用体验"></a> 使用体验</h3>
+<p>先说结论，kimi 母庸置疑是国内日常最好用的模型，没有之一。</p>
+<p>首先是基础性能，原生的多模态，问问题时直接给他喂图就行。参数量 1.1T ，同样采用MoE 架构，官网输出速度 50 tps 左右，api 反而低而且高峰期容易卡。</p>
+<p>kimi 最大的优势在于他的技能调用。严格来说 kimi 已经不能算是一个纯粹的 ai 模型。只要涉及到稍微复杂一些的计算，他都会自动调用 python ，在云端跑代码出结果进行验算，涉及到图的也会通过 python 绘制再返回给用户，这点非常好。</p>
+<p>其次就是他的 agent 功能。kimi 的网页端和 app 端自带agent，也就是说能够直接让他执行复杂的任务，比如生成调研报告、制作 PPT 等。目前体验下来，有几个致命问题：第一是他生成的 PPT 无法渲染公式，永远只能生成扁平的文字公式；第二就是他的 agent 被加了很大的限额，稍微复杂一些的任务，会直接被阻断，提示达到限额。但简单的任务还是可以胜任的，比其他家的纯对话模式不知道强了多少。</p>
+<h3 id="订阅计划推荐"><a class="markdownIt-Anchor" href="#订阅计划推荐"></a> 订阅计划推荐</h3>
+<p>首先要明确的是，kimi 不充钱几乎没法用，只要稍微多发两条消息就提示算力不足，请排队。</p>
+<p>目前订阅计划分四个：</p>
+<p><img src="https://picgo.cn-nb1.rains3.com/2026/05/7b4fe190097526234f721b53fe668e82.png" alt="img" /></p>
+<p>最便宜的，如果按月购买是49一个月。包年更便宜。</p>
+<p>目前 kimi 采取的是所谓的 <code>统一额度</code> ，就是网页对话，agent 执行， PPT 制作，深度调研、文档处理等都从一个总的额度池里面扣。但是这个额度池并没有想象的好，最主要就是体现在 agent 上面，有一个隐性的限制，只要短期内用的多就会触发限额，哪怕是99一个月的套餐也容易被限制。但这个其实也不是什么大事，因为agent 我一般放在本地跑：kimi code 通过插件在 vscode 里面调用。</p>
+<p>省流一下就是，只推荐买最便宜的套餐，而且如果你只有对话和问答需求，最便宜的套餐都有点奢侈了。因为这个套餐其实包含了很多东西，最重要的是kimi code，你可以理解为在 vscode 里面装个插件，然后让 kimi 帮你写代码，类似国外的 cursor 。主要会消耗额度的也就是agent 和 code 这两个功能。但说实话，国产模型写代码还是差点意思，真心不推荐用国产模型搞编程，会浪费大量的时间，效果也不好。</p>
+<p>app 和网页端的设计非常好，审美是国内最好的，用起来非常舒服。</p>
+<h2 id="qwen系列"><a class="markdownIt-Anchor" href="#qwen系列"></a> Qwen系列</h2>
+<p>前两个月出了Qwen 3.5-plus，最近又更新到了3.6版本。</p>
+<p>如果想不开可以试着用用，反正我是绝对不会再碰这个东西了</p>
+<p>App 完全不是人做的，一股vibe-coding 气息扑面而来；难看就算了，交互逻辑也极其反人类，设计师直接下岗吧。</p>
+<p>看看阿里云官网的审美，真的恶心：</p>
+<p><img src="https://picgo.cn-nb1.rains3.com/2026/05/a83c69ca992fae46308f331db7bad46a.png" alt="img" /></p>
+<p>模型本身也不行，参数量就不够，分数我怀疑都是刷的。思维链比火车都长，结果还经常不对。qwen3-max 依旧是国内最强的非思考模型，比 DeepSeek 好，但是 app 端还得手动调用，没适配好。总是就是：</p>
+<p>别用。</p>
+<p>别用。</p>
+<p>碰都别碰。</p>
+<h2 id="豆包"><a class="markdownIt-Anchor" href="#豆包"></a> 豆包</h2>
+<p>小问题问一问就是了，智商太低</p>
+<p><img src="https://picgo.cn-nb1.rains3.com/2026/05/b5e4320df71d94b0cd0f5949b4d2e128.png" alt="img" /></p>
+<h2 id="gemini-31-pro"><a class="markdownIt-Anchor" href="#gemini-31-pro"></a> Gemini 3.1 Pro</h2>
+<p>全球智商最高，理工科问题回答非常准确，而且香港的虚拟卡也可以开会员，挺好的。</p>
+<p>但是学生优惠白嫖的人太多，导致官方限制了回答长度，所以只适合让他做题。目前的回答长度甚至无法让他整理复习资料。</p>
+<p>想体验可以去便宜买个号试试，智商非常高，回答非常准但是没法干重活。</p>
+<h2 id="chatgpt"><a class="markdownIt-Anchor" href="#chatgpt"></a> ChatGPT</h2>
+<p>已经是美国的 Qwen 了。回答塞了一大堆令人厌烦的颜文字，智商也不是最顶尖。</p>
+<p>目前反而是他的 codex 非常好，代码能力第一梯队，而且是拉到云端自动迭代，很省事。图像生成现在断档领先</p>
+<p>如果没有代码需求别买。</p>
+<h2 id="grok"><a class="markdownIt-Anchor" href="#grok"></a> Grok</h2>
+<p>一个畸形的产品。</p>
+<p>无法确认智商，代码能力为0。反正他给的代码我从来没有成功运行过。</p>
+<p>优点就是信息更新快，可以帮你看推特。网络搜索能力强，上世纪的文章都能扒出来。</p>
+<p>还有就是对情绪的观察非常敏锐，有一点人的感觉了。</p>
+<h2 id="claude"><a class="markdownIt-Anchor" href="#claude"></a> Claude</h2>
+<p>直接看图吧：</p>
+<p><img src="https://picgo.cn-nb1.rains3.com/2026/05/082e6e9d7a9b4f0fd5fb7f124564649c.png" alt="img" /></p>
+<p>全球最好的 coding 模型，真的太强了。但官方严格封锁国内使用，只要检测到是国内的 ip ，哪怕是200刀一个月的会员账号也是秒封。实在想用建议买 cursor  的会员，然后从 cursor 里面调用。</p>
+<p>只适合编程，中文数据库已经被污染了。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>目前看下来，国内 kimi 比较值得开一个连续包年的最低档会员，会带来非常好的体验，既可以对话又可以编程。国外的不建议开，现在降智的降智，封锁的封锁，而且价格不便宜。重度编程需求建议开 cursor 的会员，可以调取市面上绝大部分的模型。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/ai/" rel="tag"># ai</a>
+              <a href="/tags/llm/" rel="tag"># llm</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2026/05/02/2/" rel="next" title="使用API调用大模型">
+      使用API调用大模型 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+<div class="comments utterances-comments">
+  <script src="https://utteranc.es/client.js"
+          repo="FengYuchen1314/comments"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+</div>
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#deepseek-v4-%E5%8F%91%E5%B8%83"><span class="nav-number">1.</span> <span class="nav-text"> DeepSeek V4 发布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kimi-k26-%E5%8F%8A%E5%85%B6%E8%AE%A2%E9%98%85%E8%AE%A1%E5%88%92"><span class="nav-number">2.</span> <span class="nav-text"> Kimi K2.6 及其订阅计划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C"><span class="nav-number">2.1.</span> <span class="nav-text"> 使用体验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A2%E9%98%85%E8%AE%A1%E5%88%92%E6%8E%A8%E8%8D%90"><span class="nav-number">2.2.</span> <span class="nav-text"> 订阅计划推荐</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#qwen%E7%B3%BB%E5%88%97"><span class="nav-number">3.</span> <span class="nav-text"> Qwen系列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B1%86%E5%8C%85"><span class="nav-number">4.</span> <span class="nav-text"> 豆包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gemini-31-pro"><span class="nav-number">5.</span> <span class="nav-text"> Gemini 3.1 Pro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chatgpt"><span class="nav-number">6.</span> <span class="nav-text"> ChatGPT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grok"><span class="nav-number">7.</span> <span class="nav-text"> Grok</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#claude"><span class="nav-number">8.</span> <span class="nav-text"> Claude</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">9.</span> <span class="nav-text"> 总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Yuchen"
+      src="https://hexoblog.cn-nb1.rains3.com/228097635.png">
+  <p class="site-author-name" itemprop="name">Yuchen</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yuchen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
+
+
+  
+
+<style id="codeblock-hover-copy-style">
+  .codeblock-hover-copy {
+    position: relative;
+    cursor: copy;
+  }
+  .codeblock-hover-copy::before {
+    content: attr(data-hint);
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+    margin-bottom: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    line-height: 1.4;
+    white-space: nowrap;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.78);
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    z-index: 20;
+  }
+  .codeblock-hover-copy:hover::before,
+  .codeblock-hover-copy.is-flash::before {
+    opacity: 1;
+  }
+  .codeblock-hover-copy.is-flash::before {
+    content: attr(data-done);
+  }
+</style>
+<script>
+(function () {
+  function getCode(fig) {
+    var lines = fig.querySelectorAll('.code .line');
+    if (lines.length) {
+      return Array.prototype.map.call(lines, function (n) { return n.innerText; }).join('\n');
+    }
+    var pre = fig.querySelector('pre');
+    return pre ? pre.textContent : '';
+  }
+
+  function copyText(text, ok, fail) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(ok).catch(function () { fallback(); });
+      return;
+    }
+    fallback();
+
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy') ? ok() : fail();
+      } catch (e) {
+        fail();
+      }
+      document.body.removeChild(ta);
+    }
+  }
+
+  function bind(fig) {
+    if (!fig || fig.dataset.hoverCopyBound) return;
+    fig.dataset.hoverCopyBound = '1';
+    fig.classList.add('codeblock-hover-copy');
+    fig.setAttribute('data-hint', '左键点击代码即可复制');
+    fig.setAttribute('data-done', '已复制到剪贴板');
+
+    fig.addEventListener('click', function (e) {
+      var text = getCode(fig);
+      if (!text) return;
+      e.preventDefault();
+
+      copyText(
+        text,
+        function () {
+          fig.classList.add('is-flash');
+          window.clearTimeout(fig._copyFlashTimer);
+          fig._copyFlashTimer = window.setTimeout(function () {
+            fig.classList.remove('is-flash');
+          }, 1200);
+        },
+        function () {
+          fig.setAttribute('data-done', '复制失败，请手动选择复制');
+          fig.classList.add('is-flash');
+          window.clearTimeout(fig._copyFlashTimer);
+          fig._copyFlashTimer = window.setTimeout(function () {
+            fig.classList.remove('is-flash');
+            fig.setAttribute('data-done', '已复制到剪贴板');
+          }, 2000);
+        }
+      );
+    });
+  }
+
+  function init() {
+    document.querySelectorAll('figure.highlight').forEach(bind);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+
+</body>
+</html>

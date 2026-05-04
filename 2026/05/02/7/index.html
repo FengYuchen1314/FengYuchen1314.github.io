@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 8.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://hexoblog.cn-nb1.rains3.com/228097635.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://hexoblog.cn-nb1.rains3.com/228097635.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://hexoblog.cn-nb1.rains3.com/228097635.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.chrono-well.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":false,"nav":null,"activeClass":"utterances"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="每到一个阶段，总是会失去一些东西">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我关闭了我的服务器">
+<meta property="og:url" content="https://www.chrono-well.top/2026/05/02/7/index.html">
+<meta property="og:site_name" content="Yuchen的博客">
+<meta property="og:description" content="每到一个阶段，总是会失去一些东西">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cn-nb1.rains3.com/hexoblog/images/image-1777730020307.png">
+<meta property="og:image" content="https://cn-nb1.rains3.com/hexoblog/images/image-1777730172321.png">
+<meta property="og:image" content="https://cn-nb1.rains3.com/hexoblog/images/image-1777730460964.png">
+<meta property="og:image" content="https://cn-nb1.rains3.com/hexoblog/images/image-1777730555753.png">
+<meta property="og:image" content="https://cn-nb1.rains3.com/hexoblog/images/image-1777730593475.png">
+<meta property="og:image" content="https://cn-nb1.rains3.com/hexoblog/images/image-1777731184407.png">
+<meta property="og:image" content="https://cn-nb1.rains3.com/hexoblog/images/image-1777732408268.jpeg">
+<meta property="article:published_time" content="2026-05-02T13:53:26.815Z">
+<meta property="article:modified_time" content="2026-05-02T14:43:06.072Z">
+<meta property="article:author" content="Yuchen">
+<meta property="article:tag" content="杂谈">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cn-nb1.rains3.com/hexoblog/images/image-1777730020307.png">
+
+<link rel="canonical" href="https://www.chrono-well.top/2026/05/02/7/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>我关闭了我的服务器 | Yuchen的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Yuchen的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">诚谬会以取拙，且欣然而归止</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="text" inputmode="search" role="searchbox" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  
+  <div id="no-result"></div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.chrono-well.top/2026/05/02/7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://hexoblog.cn-nb1.rains3.com/228097635.png">
+      <meta itemprop="name" content="Yuchen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuchen的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          我关闭了我的服务器
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2026-05-02 21:53:26 / 修改时间：22:43:06" itemprop="dateCreated datePublished" datetime="2026-05-02T21:53:26+08:00">2026-05-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9D%82%E8%B0%88/" itemprop="url" rel="index"><span itemprop="name">杂谈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>今天，2026 年 5 月 2 日，我正式关闭了自己的服务器。</p>
+<p>从记事起，我总是对新鲜事物满怀热情。小时候尝试各种运动，学习钢琴和书法；大一些开始接触电脑，不断折腾硬件：装台式机、显卡改水冷等等；再大一些就到了大学，大一学完编程之后开始折腾 NAS 存储，买了绿联 NAS 之后又开始折腾公网访问，公网访问解决完之后开始部署个人网站，最后买阿里云的 VPS 进行备案。</p>
+<p>过程是曲折而快乐的。买完阿里云服务器之后，开始用域名搭建各种服务，主要是影视服务器。硬盘买了一块又一块，16T+4T+3T×2。结果搭完之后发现家里上传带宽不够，需要压缩画质。NAS 处理器性能太差，压缩会卡，所以利用之前剩下的台式机配件组了台服务器，上面安装 Windows + Jellyfin 进行影视解码。</p>
+<p>在这暑假期间，网站也是更新了很多次，从一开始的 WordPress 框架，换到 Halo 框架。最后不满意效果，又换回了 WordPress。域名也买了三个，两个 .top 后缀的，一个 .com 后缀的，备案了两个。</p>
+<p>再之后开学了，突然发现学校的网络带宽很大，上下行千兆对等，于是购入一台零刻的飞牛 NAS（全固态）放在宿舍，网站也从 VPS 上迁移到了 NAS 上。之后想着把影视库也迁移过来，于是低价购入了极空间 Z2 Pro，让家里把 16T 的硬盘寄过来。之后还买了 115 网盘的 40T 空间 8 年会员，做了 302 直链播放。</p>
+<p>全部搞定之后索然无味，自己也没怎么看。网站也是偶尔更新。与此同时，家里的服务器被海外黑客入侵了，所以我重装了系统，改成了 Ubuntu。之后尝试在上面部署 MC 服务器，也运行了一段时间，但我自己不怎么玩，所以后续也没有结果。</p>
+<p>之后到了大二的寒假，我重新把几台设备和服务器整理了一下，重新美化了个人网站。</p>
+<p>2025 年和 2026 年是 AI 急速爆发的两年。在这个寒假，我几乎用遍了所有的 AI 模型，在自己的服务器上部署了一个又一个开源项目。尝试了 Vibe Coding，用了很多 Agent 框架，最有用的是 Dify，可以可视化搭建工作流。一个假期 API 都烧了 500+ RMB，在 GitHub 上上传了几个用处不大的项目。</p>
+<p>之后就到了这个学期，由于我报了数学双学位，课业非常繁重，之前部署的所有服务已经成为了我的负担。所以我开始不断缩减和优化自己的工具使用。AI 不再调用 API 使用，也不使用 Workflow，而是老老实实开了 Kimi 的会员。编程上也不接自己的 API 了，直接开 Cursor 的年度会员。学校的台式机太占位置，而且我也不再打游戏，于是在 4 月初校庆期间以略低的价格本校出掉，恰逢内存条飞涨，几乎覆盖了成本。之后电脑换成了现在的 ThinkBook 16+ 锐龙版，所有的主要工作都放在上面，省事且好整理，MacBook 只用来写代码或者需要长续航的场景下用。我的三台 NAS 也不再折腾，配置好了其中两台自动备份到第三台之后，就只做数据备份的用途了。影视库还在，但我几乎不看。</p>
+<p>快五一的时候，小米的 MIMO 模型发布了，一起来的还有一个百万亿 Tokens 发放计划。我凭借之前 API 的消费账单，以及 GitHub 上几个小小的项目，领到了一个月的标准 Token Plan 套餐。刚好之前的博客我觉得很麻烦，因为是动态站点，必须去后台才能写新的文章。而且星度主题有些华而不实，不如静态博客来得简约。此外我在网站上也想收缩一下，专注于内容更新，所以想着换成 Hexo 静态博客，之后的服务器什么也不去续费了，没有意义。刚好 GitHub 上有一个开源项目 Qexo，可以管理 Hexo 博客发布的全过程，但是部署很麻烦，就想着重构成 Electron 软件。那就刚好，OpenCode 接入小米的 Token Plan，开始重构。折腾了差不多两天，最终完成，页面长这样：</p>
+<p><img src="https://cn-nb1.rains3.com/hexoblog/images/image-1777730020307.png" alt="image-1777730020307.png" /></p>
+<p>项目也已经上传了 GitHub，链接为 <a target="_blank" rel="noopener" href="https://github.com/FengYuchen1314/Hexo-Studio">https://github.com/FengYuchen1314/Hexo-Studio</a> 。有了这个一键部署到 GitHub Pages 的工具，外加 Cloudflare 的自动 CDN 代理以及接入了雨云的图床，我的新站点访问非常快速，而且不用备案。界面是很简单，但也可以专注于内容的创作：</p>
+<p><img src="https://cn-nb1.rains3.com/hexoblog/images/image-1777730172321.png" alt="image-1777730172321.png" /></p>
+<p>之后会把之前的备案什么都注销掉，只用静态站点。</p>
+<p>刚开学的时候试着自己部署一个 Overleaf，后来兜兜转转找到了一个本校研究生学长的开源项目。他把 Overleaf 社区版拿去改造，加了很多 Pro 版才有的功能。我们学校的 Overleaf 用的就是他的镜像。部署很困难，各种环境不兼容，但最后还是成功了。此外我还搓了一个自动备份的工具，可以每天自动拉取我平台上的文件进行备份：</p>
+<p><img src="https://cn-nb1.rains3.com/hexoblog/images/image-1777730460964.png" alt="image-1777730460964.png" /></p>
+<p>回想过去，确实在服务器、网络这一块折腾到头了，有些身心俱疲。看一眼自己要处理的域名就头大：</p>
+<p><img src="https://cn-nb1.rains3.com/hexoblog/images/image-1777730555753.png" alt="image-1777730555753.png" /></p>
+<p>还有 Docker 管理，也是一团糟：</p>
+<p><img src="https://cn-nb1.rains3.com/hexoblog/images/image-1777730593475.png" alt="image-1777730593475.png" /></p>
+<p>之前部署的服务，到现在还有用，且用处比较大的，也就剩下一个 HedgeDoc 了，一个在线的 Markdown 编辑和协作平台。这个平台我后期会保留。还有就是班级的照片站：</p>
+<p><img src="https://cn-nb1.rains3.com/hexoblog/images/image-1777731184407.png" alt="image-1777731184407.png" /></p>
+<p>是动态站点，后面不续服务器了考虑转成静态站点。</p>
+<p>坦率地说，折腾了这么多东西也不是毫无用处，至少学到了一些技能，对软件和 Web 开发也有了一定的了解。最重要的是对 AI 的使用已经到了炉火纯青的地步，至少在调用方面胜过了身边所有人，可以认为是全国用的最舒服的那一批，彻底融入了生活又不会过分依赖，自己也能写一些工作流和交互的调用。举个例子，这篇文章并不是最初的版本，我用 ai 润色过。但如果我不说，大概也没人能发现。</p>
+<p>但现在，事情越来越多，也该放掉一些东西。之前的 NAS 和台式机已经处理完，现在轮到服务器了。今天把静态博客正式上线（ <a href="https://www.chrono-well.top/">https://www.chrono-well.top/</a> ），把之前自己搭建的 LaTeX 平台的文件备份出来，正式关闭线下物理机。至于 NAS 和云端的一些服务，挺感激自己当初部署时的那份认真，当时是朝着永不维护、一直运行下去的目标构建的，所以暂时不用管理，等放暑假了再说，到时候连着 VPS 和备案一起处理掉。</p>
+<p>高中的时候学诗词，总是觉得很枯燥乏味。但到了现在，却有了不一样的感受。离骚里的日月忽其不淹兮，春与秋其代序，以及陶渊明写的善万物之得时，感吾生之行休，时常萦绕在我的脑海里。</p>
+<p>这学期在思想上很幸运，一是遇到了一个非常好的马原老师，刚刚北大文学博士毕业。他的课程对我整个思想产生了极大的冲击，几乎重塑了我的价值观，以及与人相处的方式和原则；二是选了一门诗词的通识课，感受到了一些不一样的东西。此外还有很多很幸运的事，有时候真的觉得，命运是存在的，世界有自己的定数。</p>
+<p>回归到一开始的话题，今天我的线下物理机就正式关停了。心里难免有些伤感，但又不得不做。又想起一句诗：流水今日，明月前身。一件事放在时间轴上看，不过也就是一个点，人还是得往前走。现在的大环境不好，大家的压力都很大，但这个过程中人和环境、社会产生更多的交互，也就有了更多的实践，这也是马克思认为的真正的人，也是人和 AI 最本质的区别。</p>
+<p>本来文章已经结束了，但我去我的相册里找配图，又勾起了很多回忆。文章前半段的图不补了，放一张书房的图片，结束这篇文章，也和我的服务器道个别：</p>
+<p><img src="https://cn-nb1.rains3.com/hexoblog/images/image-1777732408268.jpeg" alt="image-1777732408268.jpeg" /></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9D%82%E8%B0%88/" rel="tag"># 杂谈</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2026/05/02/6/" rel="prev" title="markdown 格式规范">
+      <i class="fa fa-chevron-left"></i> markdown 格式规范
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2026/05/03/8/" rel="next" title="中文技术文档写作规范">
+      中文技术文档写作规范 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+<div class="comments utterances-comments">
+  <script src="https://utteranc.es/client.js"
+          repo="FengYuchen1314/comments"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+</div>
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Yuchen"
+      src="https://hexoblog.cn-nb1.rains3.com/228097635.png">
+  <p class="site-author-name" itemprop="name">Yuchen</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yuchen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
+
+
+  
+
+<style id="codeblock-hover-copy-style">
+  .codeblock-hover-copy {
+    position: relative;
+    cursor: copy;
+  }
+  .codeblock-hover-copy::before {
+    content: attr(data-hint);
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+    margin-bottom: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    line-height: 1.4;
+    white-space: nowrap;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.78);
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    z-index: 20;
+  }
+  .codeblock-hover-copy:hover::before,
+  .codeblock-hover-copy.is-flash::before {
+    opacity: 1;
+  }
+  .codeblock-hover-copy.is-flash::before {
+    content: attr(data-done);
+  }
+</style>
+<script>
+(function () {
+  function getCode(fig) {
+    var lines = fig.querySelectorAll('.code .line');
+    if (lines.length) {
+      return Array.prototype.map.call(lines, function (n) { return n.innerText; }).join('\n');
+    }
+    var pre = fig.querySelector('pre');
+    return pre ? pre.textContent : '';
+  }
+
+  function copyText(text, ok, fail) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(ok).catch(function () { fallback(); });
+      return;
+    }
+    fallback();
+
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy') ? ok() : fail();
+      } catch (e) {
+        fail();
+      }
+      document.body.removeChild(ta);
+    }
+  }
+
+  function bind(fig) {
+    if (!fig || fig.dataset.hoverCopyBound) return;
+    fig.dataset.hoverCopyBound = '1';
+    fig.classList.add('codeblock-hover-copy');
+    fig.setAttribute('data-hint', '左键点击代码即可复制');
+    fig.setAttribute('data-done', '已复制到剪贴板');
+
+    fig.addEventListener('click', function (e) {
+      var text = getCode(fig);
+      if (!text) return;
+      e.preventDefault();
+
+      copyText(
+        text,
+        function () {
+          fig.classList.add('is-flash');
+          window.clearTimeout(fig._copyFlashTimer);
+          fig._copyFlashTimer = window.setTimeout(function () {
+            fig.classList.remove('is-flash');
+          }, 1200);
+        },
+        function () {
+          fig.setAttribute('data-done', '复制失败，请手动选择复制');
+          fig.classList.add('is-flash');
+          window.clearTimeout(fig._copyFlashTimer);
+          fig._copyFlashTimer = window.setTimeout(function () {
+            fig.classList.remove('is-flash');
+            fig.setAttribute('data-done', '已复制到剪贴板');
+          }, 2000);
+        }
+      );
+    });
+  }
+
+  function init() {
+    document.querySelectorAll('figure.highlight').forEach(bind);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+
+</body>
+</html>

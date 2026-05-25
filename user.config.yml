@@ -15,9 +15,9 @@
 site:
   url: https://www.chrono-well.top
 
-# 若同时用 GitHub Pages 域名 + 自定义域名，改为 false
+# 自定义域名建议关闭，避免误报弹窗
 experiments:
-  antiFakeWebsite: true
+  antiFakeWebsite: false
 
 # 首页大标题（仅首页显示，比站点 title 更醒目）
 alternate: "Yuchen"

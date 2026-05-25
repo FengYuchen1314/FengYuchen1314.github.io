@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "postinstall": "node toolbox/link-theme.mjs",
+    "postinstall": "node toolbox/link-theme.mjs && node toolbox/patch-shokax-antifake.mjs",
     "config": "node toolbox/merge-config.mjs",
-    "prebuild": "node toolbox/merge-config.mjs",
-    "preserver": "node toolbox/merge-config.mjs",
+    "prebuild": "node toolbox/merge-config.mjs && node toolbox/patch-shokax-antifake.mjs",
+    "preserver": "node toolbox/merge-config.mjs && node toolbox/patch-shokax-antifake.mjs",
     "build": "hexo generate && node toolbox/verify-build.mjs && npx --yes pagefind --site public",
     "clean": "hexo clean",
     "deploy": "hexo deploy",

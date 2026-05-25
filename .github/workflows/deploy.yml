@@ -34,6 +34,9 @@ jobs:
       - name: Merge theme config
         run: npm run config
 
+      - name: Patch ShokaX anti-fake
+        run: node toolbox/patch-shokax-antifake.mjs
+
       - name: Build site
         run: npm run build
 

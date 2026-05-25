@@ -148,6 +148,8 @@ widgets:
   recent_comments: true
 post:
   count: true
+postStyle:
+  headingNumber: true
 outime:
   enable: false
   days: 90

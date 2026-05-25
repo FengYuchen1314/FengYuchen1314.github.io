@@ -1,0 +1,55 @@
+// 文章标题自动编号（1. / 1.1 / 1.1.1）
+// 可在 user.config.yml 中设置 postStyle.headingNumber: false 关闭
+
+unless hexo-config('postStyle.headingNumber') == false
+  .post.block .body.md
+    counter-reset: h2section
+
+    h2
+      counter-reset: h3section
+      counter-increment: h2section
+
+      &::before
+        content: counter(h2section) '. '
+        margin-right: .35em
+        color: var(--primary-color)
+        font-weight: 600
+
+    h3
+      counter-reset: h4section
+      counter-increment: h3section
+
+      &::before
+        content: counter(h2section) '.' counter(h3section) ' '
+        margin-right: .35em
+        color: var(--primary-color)
+        font-weight: 600
+
+    h4
+      counter-reset: h5section
+      counter-increment: h4section
+
+      &::before
+        content: counter(h2section) '.' counter(h3section) '.' counter(h4section) ' '
+        margin-right: .35em
+        font-weight: 600
+
+    h5
+      counter-reset: h6section
+      counter-increment: h5section
+
+      &::before
+        content: counter(h2section) '.' counter(h3section) '.' counter(h4section) '.' counter(h5section) ' '
+        margin-right: .35em
+
+    h6
+      counter-increment: h6section
+
+      &::before
+        content: counter(h2section) '.' counter(h3section) '.' counter(h4section) '.' counter(h5section) '.' counter(h6section) ' '
+        margin-right: .35em
+
+    .note, .tabs, .quiz, blockquote
+      h2, h3, h4, h5, h6
+        &::before
+          content: none !important

@@ -160,6 +160,9 @@ widgets:
 post:
   count: true
 
+postStyle:
+  headingNumber: true
+
 outime:
   enable: false
   days: 90

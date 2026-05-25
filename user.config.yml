@@ -54,6 +54,10 @@ homeConfig:
   #   - slug: tutorials
   #     cover: tutorials/cover.jpg
 
+# ---------- 文章样式 ----------
+postStyle:
+  headingNumber: true  # 为 ## ### 等标题自动编号（1. / 1.1 / 1.1.1）
+
 # ---------- 评论系统（二选一，默认都关闭）----------
 # Waline: https://waline.js.org/
 waline:

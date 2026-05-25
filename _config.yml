@@ -11,7 +11,7 @@ language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
-url: https://FengYuchen1314.github.io
+url: https://www.chrono-well.top
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:

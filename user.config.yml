@@ -9,6 +9,16 @@
 #   source/_data/assets/        头像、favicon、赞赏码等图片
 # ============================================================
 
+# ---------- 站点正式访问地址 ----------
+# 必须与浏览器地址栏一致（含 https，无末尾斜杠）
+# ShokaX 防仿站会比对域名，不一致会弹窗并跳转
+site:
+  url: https://www.chrono-well.top
+
+# 若同时用 GitHub Pages 域名 + 自定义域名，改为 false
+experiments:
+  antiFakeWebsite: true
+
 # 首页大标题（仅首页显示，比站点 title 更醒目）
 alternate: "Yuchen"
 

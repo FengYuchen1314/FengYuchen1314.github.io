@@ -27,11 +27,22 @@ function deepMerge(base, override) {
 
 const basePath = path.join(root, 'config', 'shokax.base.yml');
 const userPath = path.join(root, 'user.config.yml');
+const hexoConfigPath = path.join(root, '_config.yml');
 const outputPath = path.join(root, '_config.shokax.yml');
 
 const base = yaml.load(fs.readFileSync(basePath, 'utf8'));
 const user = yaml.load(fs.readFileSync(userPath, 'utf8'));
-const merged = deepMerge(base, user);
+
+if (user.site?.url) {
+  const url = user.site.url.replace(/\/$/, '');
+  let hexoYaml = fs.readFileSync(hexoConfigPath, 'utf8');
+  hexoYaml = hexoYaml.replace(/^url: .+$/m, `url: ${url}`);
+  fs.writeFileSync(hexoConfigPath, hexoYaml);
+  console.log(`Updated _config.yml url -> ${url}`);
+}
+
+const { site, ...themeUser } = user;
+const merged = deepMerge(base, themeUser);
 
 fs.writeFileSync(outputPath, yaml.dump(merged, { lineWidth: -1, noRefs: true }));
 console.log('Generated _config.shokax.yml from user.config.yml');

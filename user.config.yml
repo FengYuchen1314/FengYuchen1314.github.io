@@ -37,8 +37,8 @@ sidebar:
 
 # ---------- 主页封面 ----------
 homeConfig:
-  # 留空则使用 Bing 随机图；填 URL 则固定封面（推荐图床 HTTPS 链接）
-  fixedCover: ""
+  # fixedCover 留空则使用 images.yml 轮播；images.yml 至少需要 6 张 HTTPS 图片
+  fixedCover: "https://cn-nb1.rains3.com/hexoblog/images/image-1777732408268.jpeg"
   # 首页分类精选卡片（可选）
   # cateCards:
   #   - slug: tutorials

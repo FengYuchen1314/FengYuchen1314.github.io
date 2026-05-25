@@ -14,7 +14,7 @@ experiments:
   antiFakeWebsite: true
 homeConfig:
   gradient: false
-  fixedCover: ''
+  fixedCover: https://cn-nb1.rains3.com/hexoblog/images/image-1777732408268.jpeg
   coverConfig:
     enableCover: true
     enablePreload: true

@@ -7,7 +7,7 @@
     "config": "node toolbox/merge-config.mjs",
     "prebuild": "node toolbox/merge-config.mjs",
     "preserver": "node toolbox/merge-config.mjs",
-    "build": "hexo generate && npx --yes pagefind --site public",
+    "build": "hexo generate && node toolbox/verify-build.mjs && npx --yes pagefind --site public",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server"

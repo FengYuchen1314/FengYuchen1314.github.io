@@ -11,7 +11,7 @@ pwa:
 experiments:
   mobileWidth: 820px
   copyrightLength: 50
-  antiFakeWebsite: true
+  antiFakeWebsite: false
 homeConfig:
   gradient: false
   fixedCover: https://cn-nb1.rains3.com/hexoblog/images/image-1777732408268.jpeg

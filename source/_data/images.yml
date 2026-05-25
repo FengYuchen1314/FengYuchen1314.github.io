@@ -1,8 +1,8 @@
-# ShokaX 要求至少 6 张 HTTPS 图片，否则页面会生成失败（白屏）
-# 可自行替换为你的图床链接
-- https://cn-nb1.rains3.com/hexoblog/images/image-1777730020307.png
-- https://cn-nb1.rains3.com/hexoblog/images/image-1777730172321.png
-- https://cn-nb1.rains3.com/hexoblog/images/image-1777730460964.png
-- https://cn-nb1.rains3.com/hexoblog/images/image-1777730555753.png
-- https://cn-nb1.rains3.com/hexoblog/images/image-1777730593475.png
-- https://cn-nb1.rains3.com/hexoblog/images/image-1777731184407.png
+# 备用封面列表（当未配置 image_server 时使用，至少 6 条）
+# 默认与 index_image_server 一致：随机风景图 API
+- https://api.lincloud.cn/image/view/?1
+- https://api.lincloud.cn/image/view/?2
+- https://api.lincloud.cn/image/view/?3
+- https://api.lincloud.cn/image/view/?4
+- https://api.lincloud.cn/image/view/?5
+- https://api.lincloud.cn/image/view/?6

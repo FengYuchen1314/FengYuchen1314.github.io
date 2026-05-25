@@ -5,7 +5,7 @@
 #
 # 其他可选文件:
 #   source/_data/languages.yml  浏览器标签切换时的站点标题
-#   source/_data/images.yml     首页轮播图（HTTPS 链接列表）
+#   source/_data/images.yml     备用封面列表（未配置 API 时兜底，至少 6 条）
 #   source/_data/assets/        头像、favicon、赞赏码等图片
 # ============================================================
 
@@ -45,10 +45,15 @@ sidebar:
   # 头像放在 source/_data/assets/avatar.jpg
   avatar: avatar.jpg
 
+# ---------- 封面图 API ----------
+# 文章未指定 cover 时使用二次元图；站点头图/轮播使用随机风景图
+image_server: "https://api.lincloud.cn/image/acgimg"
+index_image_server: "https://api.lincloud.cn/image/view/"
+
 # ---------- 主页封面 ----------
 homeConfig:
-  # fixedCover 留空则使用 images.yml 轮播；images.yml 至少需要 6 张 HTTPS 图片
-  fixedCover: "https://cn-nb1.rains3.com/hexoblog/images/image-1777732408268.jpeg"
+  # fixedCover 留空则使用 index_image_server 轮播 6 张风景图
+  fixedCover: "https://api.lincloud.cn/image/view/"
   # 首页分类精选卡片（可选）
   # cateCards:
   #   - slug: tutorials

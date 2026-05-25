@@ -17,9 +17,14 @@ experiments:
   copyrightLength: 50
   antiFakeWebsite: false
 
+# 无封面文章默认图（二次元）
+image_server: "https://api.lincloud.cn/image/acgimg"
+# 站点头图/轮播默认图（随机风景）
+index_image_server: "https://api.lincloud.cn/image/view/"
+
 homeConfig:
   gradient: false
-  fixedCover: ""
+  fixedCover: "https://api.lincloud.cn/image/view/"
   coverConfig:
     enableCover: true
     enablePreload: true
@@ -39,6 +44,7 @@ performance:
   preConnect:
     - "https://s4.zstatic.net"
     - "https://at.alicdn.com"
+    - "https://api.lincloud.cn"
   dnsPrefetch: []
 
 playerAPI: "https://api.injahow.cn"

@@ -1,0 +1,111 @@
+# ============================================================
+# 个人配置 — 只需编辑本文件
+# 修改后运行 npm run config，或直接 npm run build / npm run server
+# 会自动合并生成 _config.shokax.yml
+#
+# 其他可选文件:
+#   source/_data/languages.yml  浏览器标签切换时的站点标题
+#   source/_data/images.yml     首页轮播图（HTTPS 链接列表）
+#   source/_data/assets/        头像、favicon、赞赏码等图片
+# ============================================================
+
+# 首页大标题（仅首页显示，比站点 title 更醒目）
+alternate: "Yuchen"
+
+# ---------- 导航菜单 ----------
+# 格式: 菜单名: 链接 || 图标代号
+# 图标代号见文档: https://docs.shokax.kaitaku.xyz/features/iconfont/
+menu:
+  home: / || home
+  archives: /archives/ || list-alt
+  categories: /categories/ || th
+  tags: /tags/ || tags
+
+# ---------- 社交链接 ----------
+# 格式: 平台: 链接 || 图标 || 颜色(可选)
+# 不需要的项删掉或注释掉即可
+social:
+  github: https://github.com/FengYuchen1314 || github || "#191717"
+  # email: mailto:your@email.com || envelope || "#55acd5"
+  # bilibili: https://space.bilibili.com/你的UID || bilibili || "#fb7299"
+
+# ---------- 侧边栏 ----------
+sidebar:
+  position: right
+  # 头像放在 source/_data/assets/avatar.jpg
+  avatar: avatar.jpg
+
+# ---------- 主页封面 ----------
+homeConfig:
+  # 留空则使用 Bing 随机图；填 URL 则固定封面（推荐图床 HTTPS 链接）
+  fixedCover: ""
+  # 首页分类精选卡片（可选）
+  # cateCards:
+  #   - slug: tutorials
+  #     cover: tutorials/cover.jpg
+
+# ---------- 评论系统（二选一，默认都关闭）----------
+# Waline: https://waline.js.org/
+waline:
+  enable: false
+  serverURL: ""  # 例: https://waline.example.com
+
+# Twikoo: https://twikoo.js.org/
+twikoo:
+  enable: false
+  mode: vercel
+  envId: ""  # 例: https://twikoo.example.com
+
+# ---------- 本地搜索 Pagefind ----------
+# 开启后 build 会自动建立索引
+pagefind:
+  enable: true
+
+# ---------- SEO 验证码（不需要可留空）----------
+seo:
+  bing:
+  google:
+  baidu:
+
+# ---------- 访客统计（不需要可留 false）----------
+visitor:
+  clarity: false
+  baiduAnalytics: false
+  googleAnalytics: false
+
+# ---------- 页脚 ----------
+footer:
+  since: 2026
+  count: true
+  powered: true
+  icon:
+    name: sakura rotate
+    color: "#ffc0cb"
+  icp:
+    enable: false
+    icon: ""
+    icpnumber: ""
+    beian: ""
+    recordcode: ""
+
+# ---------- 赞赏码（图片放 source/_data/assets/）----------
+reward:
+  enable: false
+  account:
+    wechatpay: /wechatpay.png
+    alipay: /alipay.png
+
+# ---------- 背景音乐（可选）----------
+# audio:
+#   - title: 我的歌单
+#     list:
+#       - https://music.163.com/#/playlist?id=你的歌单ID
+
+# ---------- 功能模块开关 ----------
+# 不用的功能建议关闭以提升性能
+modules:
+  player: true
+  fireworks: true
+  visibilityListener: true
+  tabs: true
+  quiz: true

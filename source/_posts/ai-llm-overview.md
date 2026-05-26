@@ -7,6 +7,7 @@ tags:
   - llm
 categories:
   - ai
+cover: https://picgo.cn-nb1.rains3.com/2026/05/03ae28196bfb4fd78e10a58feba20b45.png
 ---
 
 ## DeepSeek V4 发布

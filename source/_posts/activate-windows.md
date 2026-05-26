@@ -6,7 +6,7 @@ tags:
   - windows激活
 categories:
   - 实用教程
-cover: https://cn-nb1.rains3.com/wordpress/58d2d83b-5e58-4d7e-9073-699013891c78.jpg
+cover: https://picgo.cn-nb1.rains3.com/2026/05/0c253c32ae70093e48499bb43f871efd.png
 ---
 
 ### 第一步：以管理员身份打开cmd

@@ -4,7 +4,7 @@ date: 2026-05-25 21:00:00
 comments: false
 ---
 
-![avatar](/assets/1.jepg)
+![avatar](https://picgo.cn-nb1.rains3.com/2026/05/42c27b82ba2f035ea57c35cd71a3743f.jpeg)
 
 你好，我是 FengYuchen，一名热爱折腾技术的开发者。
 

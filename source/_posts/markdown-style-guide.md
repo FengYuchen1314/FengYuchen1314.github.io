@@ -6,6 +6,7 @@ categories:
   - 实用教程
 author: Yuchen
 excerpt: 空格和标点的使用规范，以及少量缩写规范
+cover: https://picgo.cn-nb1.rains3.com/2026/05/e9af48e710ef9f0711d3e5a84e820ff5.png
 ---
 
 转载文章，原文链接为：[点击进入](https://github.com/sparanoid/chinese-copywriting-guidelines/blob/master/README.zh-Hans.md)

@@ -6,7 +6,7 @@ categories:
   - 杂谈
 author: Yuchen
 excerpt: 每到一个阶段，总是会失去一些东西
-cover: https://picgo.cn-nb1.rains3.com/2026/05/b19d98d00cf423c8be7062226e93511c.png
+cover: https://picgo.cn-nb1.rains3.com/2026/05/627f74c2cdbbff054355b4e0daeb3948.png
 ---
 今天，2026 年 5 月 2 日，我正式关闭了自己的服务器。
 

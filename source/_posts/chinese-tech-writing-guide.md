@@ -6,6 +6,7 @@ categories:
   - 实用教程
 author: Yuchen
 excerpt: 适用于软件手册、技术文档及中文写作场景
+cover: https://picgo.cn-nb1.rains3.com/2026/05/44358bc14e4b304dd6133c99447607a1.png
 ---
 
 > 本文整理自阮一峰的《中文技术文档写作规范》，适用于软件手册、技术文档及中文写作场景。

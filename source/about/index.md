@@ -4,8 +4,6 @@ date: 2026-05-25 21:00:00
 comments: false
 ---
 
-![avatar](https://picgo.cn-nb1.rains3.com/2026/05/42c27b82ba2f035ea57c35cd71a3743f.jpeg)
-
 你好，我是 FengYuchen，一名热爱折腾技术的开发者。
 
 这个站点是我的个人博客，主要记录学习笔记、工具使用心得和一些随想。内容不一定很系统，但都是真实用过、写过的总结。

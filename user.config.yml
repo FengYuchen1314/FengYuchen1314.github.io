@@ -27,6 +27,7 @@ alternate: "Yuchen"
 # 图标代号见文档: https://docs.shokax.kaitaku.xyz/features/iconfont/
 menu:
   home: / || home
+  about: /about/ || user
   archives: /archives/ || list-alt
   categories: /categories/ || th
   tags: /tags/ || tags

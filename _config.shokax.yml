@@ -188,6 +188,7 @@ vendors:
 alternate: Yuchen
 menu:
   home: / || home
+  about: /about/ || user
   archives: /archives/ || list-alt
   categories: /categories/ || th
   tags: /tags/ || tags

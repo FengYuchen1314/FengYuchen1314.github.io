@@ -6,6 +6,7 @@ categories:
   - git
 author: Yuchen
 excerpt: 用github备份文件，保存每次更改
+cover: https://picgo.cn-nb1.rains3.com/2026/05/f8a82b16646c6b97a1022f1316bdcf00.png
 ---
 **配置（只需一次）**  
 

@@ -165,7 +165,7 @@ post:
   count: true
 
 postStyle:
-  headingNumber: true
+  headingNumber: false
 
 outime:
   enable: false

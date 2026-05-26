@@ -163,15 +163,9 @@ reward:
 tagcloud:
   min: 16
   max: 22
-  start: '#c5ddd2'
-  end: '#5f8a78'
+  start: '#72cecf'
+  end: '#ffbac3'
   amount: 200
-  icp:
-    enable: false
-    icon: ''
-    icpnumber: ''
-    beian: ''
-    recordcode: ''
 creative_commons:
   license: by-nc-sa
   language: deed.zh
@@ -219,4 +213,10 @@ footer:
   powered: true
   icon:
     name: sakura rotate
-    color: '#9bb5a8'
+    color: '#ffc0cb'
+  icp:
+    enable: false
+    icon: ''
+    icpnumber: ''
+    beian: ''
+    recordcode: ''

@@ -17,9 +17,12 @@ experiments:
   copyrightLength: 50
   antiFakeWebsite: false
 
+# 站点头图/轮播（随机风景 API）
+index_image_server: "https://api.fuchenboke.cn/api/fengjing.php"
+
 homeConfig:
   gradient: false
-  fixedCover: ""
+  fixedCover: "https://api.fuchenboke.cn/api/fengjing.php"
   coverConfig:
     enableCover: true
     enablePreload: true
@@ -39,6 +42,7 @@ performance:
   preConnect:
     - "https://s4.zstatic.net"
     - "https://at.alicdn.com"
+    - "https://api.fuchenboke.cn"
   dnsPrefetch: []
 
 playerAPI: "https://api.injahow.cn"

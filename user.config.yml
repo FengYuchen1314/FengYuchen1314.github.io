@@ -5,7 +5,8 @@
 #
 # 其他可选文件:
 #   source/_data/languages.yml  浏览器标签切换时的站点标题
-#   source/_data/images.yml     首页轮播图（HTTPS 链接列表，至少 6 张）
+#   source/_data/images.yml        文章无封面时的备用图（至少 6 张）
+#   source/_data/images_index.yml  站点头图轮播备用（fixedCover 留空时）
 #   source/_data/assets/        头像、favicon、赞赏码等图片
 # ============================================================
 
@@ -46,10 +47,12 @@ sidebar:
   # 头像放在 source/_data/assets/avatar.jpg
   avatar: avatar.jpg
 
-# ---------- 主页封面 ----------
+# ---------- 站点头图（背景大图）----------
+# 随机风景 API，用于各页顶部背景；文章列表封面仍用 images.yml / 文章 cover
+index_image_server: "https://api.fuchenboke.cn/api/fengjing.php"
+
 homeConfig:
-  # fixedCover 留空则使用 images.yml 轮播；images.yml 至少需要 6 张 HTTPS 图片
-  fixedCover: "https://cn-nb1.rains3.com/hexoblog/images/image-1777732408268.jpeg"
+  fixedCover: "https://api.fuchenboke.cn/api/fengjing.php"
   # 首页分类精选卡片（可选）
   # cateCards:
   #   - slug: tutorials

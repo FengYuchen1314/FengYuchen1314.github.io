@@ -12,9 +12,10 @@ experiments:
   mobileWidth: 820px
   copyrightLength: 50
   antiFakeWebsite: false
+index_image_server: https://api.fuchenboke.cn/api/fengjing.php
 homeConfig:
   gradient: false
-  fixedCover: https://cn-nb1.rains3.com/hexoblog/images/image-1777732408268.jpeg
+  fixedCover: https://api.fuchenboke.cn/api/fengjing.php
   coverConfig:
     enableCover: true
     enablePreload: true
@@ -32,6 +33,7 @@ performance:
   preConnect:
     - https://s4.zstatic.net
     - https://at.alicdn.com
+    - https://api.fuchenboke.cn
   dnsPrefetch: []
 playerAPI: https://api.injahow.cn
 icon:

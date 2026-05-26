@@ -25,7 +25,7 @@ modules:
   debug: false
   player: true
   fireworks: true
-  visibilityListener: true
+  visibilityListener: false
   tabs: true
   quiz: true
   cloudflarePatch: false

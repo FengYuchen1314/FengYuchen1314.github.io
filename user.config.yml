@@ -124,6 +124,6 @@ reward:
 modules:
   player: true
   fireworks: true
-  visibilityListener: true
+  visibilityListener: false
   tabs: true
   quiz: true

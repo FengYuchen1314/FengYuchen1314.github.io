@@ -98,7 +98,12 @@ footer:
   powered: true
   icon:
     name: sakura rotate
-    color: "#ffc0cb"
+    color: "#9bb5a8"
+
+# ---------- 标签云渐变色（浅浅墨绿）----------
+tagcloud:
+  start: "#c5ddd2"
+  end: "#5f8a78"
   icp:
     enable: false
     icon: ""

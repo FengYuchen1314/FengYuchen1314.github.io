@@ -12,11 +12,9 @@ experiments:
   mobileWidth: 820px
   copyrightLength: 50
   antiFakeWebsite: false
-image_server: https://api.lincloud.cn/image/acgimg
-index_image_server: https://api.lincloud.cn/image/view/
 homeConfig:
   gradient: false
-  fixedCover: https://api.lincloud.cn/image/view/
+  fixedCover: https://cn-nb1.rains3.com/hexoblog/images/image-1777732408268.jpeg
   coverConfig:
     enableCover: true
     enablePreload: true
@@ -34,7 +32,6 @@ performance:
   preConnect:
     - https://s4.zstatic.net
     - https://at.alicdn.com
-    - https://api.lincloud.cn
   dnsPrefetch: []
 playerAPI: https://api.injahow.cn
 icon:
